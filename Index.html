@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 14px; /* Standard Schriftgröße auf 14px setzen */
+        }
+
+        /* Hintergrund-GIF für den gesamten Body */
+        body {
+            background-image: url('https://i.pinimg.com/originals/21/7d/a2/217da299cc918fad9b76eb99e4bb75b3.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Overlay über dem Hintergrund */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Halbdurchsichtiger schwarzer Overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Titel im Overlay */
+        h1 {
+            font-size: 2rem;
+            color: green;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid green;
+            display: inline-block;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover-Effekt für den Titel */
+        h1:hover {
+            color: white;
+            background-color: black;
+            border-color: white;
+        }
+
+        /* Button-Container */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Allgemeiner Button-Stil */
+        .button {
+            font-size: 1rem;
+            color: green;
+            text-decoration: none;
+            background-color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover-Effekt für die Buttons */
+        .button:hover {
+            background-color: rgba(0, 128, 0, 0.1);
+            color: white;
+            border-color: white;
+            transform: scale(1.1);
+        }
+
+        /* Kontakt-Button unten */
+        .contact-bar {
+            position: fixed;
+            bottom: 0;
+            left: -80px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .contact-button {
+            font-size: 0.8rem;
+            color: green;
+            text-decoration: none;
+            background-color: black;
+            border: 2px solid green;
+            padding: 8px 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Hover-Effekt für den Kontakt-Button */
+        .contact-button:hover {
+            background-color: rgba(0, 128, 0, 0.1);
+            color: white;
+            border-color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hintergrund mit GIF und Overlay -->
+    <div class="overlay">
+        <div>
+            <h1>Informationen für Arbeitgeber</h1>
+            <div class="button-container">
+                <a href="Lebenslauf.html" class="button">Mein Lebenslauf</a>
+                <a href="Zeugnisse.html" class="button">Meine Zeugnisse</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer mit Kontakt-Button -->
+    <div class="contact-bar">
+        <a href="mailto:lejla.habibovic@protonmail.com" class="contact-button">Kontakt aufnehmen</a>
+    </div>
+
+</body>
+</html>
