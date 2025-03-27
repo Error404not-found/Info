@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebenslauf - Lejla Habibovic</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            font-size: 14px; /* Standard Schriftgröße auf 14px setzen */
+        }
+
+        /* Hintergrund-GIF für den gesamten Body */
+        body {
+            background-image: url('https://i.pinimg.com/originals/21/7d/a2/217da299cc918fad9b76eb99e4bb75b3.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Zentrierter Container für den Lebenslauf mit schwarzen Hintergrund */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 1); /* Schwarzer Hintergrund mit 100% Transparenz */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            margin-top: 50px;
+            padding-bottom: 50px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Titel mit schwarzem Hintergrund und grüner Schrift */
+        h1 {
+            font-size: 20px; /* Titelgröße 20px */
+            color: green; /* Schriftfarbe grün */
+            background-color: black; /* Hintergrund schwarz */
+            text-align: center;
+            border: 2px solid green;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            cursor: pointer; /* Zeigt, dass der Titel klickbar ist */
+            transition: background-color 0.3s, color 0.3s; /* Sanfter Farbwechsel */
+        }
+
+        /* Hover-Effekt */
+        h1:hover {
+            color: white; /* Schrift wird weiß */
+            background-color: black; /* Hintergrund bleibt schwarz */
+            border-color: white; /* Rand wird weiß */
+        }
+
+        /* Überschrift der Abschnitte (Schulbildung, Berufliche Laufbahn, etc.) */
+        .section-title {
+            font-size: 14px; /* Titelgröße 14px */
+            font-weight: bold; /* Fett für die Abschnittstitel */
+            margin-bottom: 20px; /* Mehr Abstand zwischen den Abschnitten */
+            color: green; /* Grün für die Abschnittstitel */
+            text-align: center;
+            border: 2px solid green;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang für Hover-Effekt */
+        }
+
+        /* Hover-Effekt für Abschnittstitel */
+        .section-title:hover {
+            background-color: rgba(0, 128, 0, 0.1); /* Helles Grün beim Hover */
+            color: white; /* Schriftfarbe wird weiß */
+            border-color: white; /* Rand wird weiß */
+        }
+
+        /* Text, der bei Hover angezeigt wird */
+        .section-content {
+            display: none; /* Startet als unsichtbar */
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        .experience-item {
+            margin-bottom: 30px; /* Mehr Abstand zwischen den einzelnen Berufserfahrungen */
+        }
+
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            color: white;
+            text-align: left;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        .skills li,
+        .hobbies li,
+        p, strong {
+            color: white;  /* Weiß für Jobtitel und normale Abschnitte */
+            font-weight: normal; /* Jobtitel nicht fett */
+        }
+
+        /* Dein Name normal, nicht fett */
+        p strong {
+            font-weight: normal;
+        }
+
+        /* Footer mit zentriertem Text */
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+
+/* Zurück-Link ganz unten */
+.back-link {
+    position: relative; /* Fixiert den Link am unteren Rand der Seite */
+    bottom: 15px; /* Abstand vom unteren Rand */
+    left: 50%; /* Positioniert den Link horizontal in der Mitte */
+    transform: translateX(-50%); /* Verschiebt den Link genau in die Mitte */
+    text-align: center;
+    margin-top: 10px; /* Optional, für den Abstand nach oben */
+}
+
+.back-link a {
+    font-size: 1rem;
+    color: green; /* Textfarbe auf grün setzen */
+    background-color: black; /* Hintergrundfarbe schwarz */
+    text-decoration: none;
+    border: 2px solid green; /* Rahmen ebenfalls grün */
+    padding: 8px 18px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+    background-color: black; /* Dunkelgrüner Hintergrund bei Hover */
+    color: white; /* Text bleibt grün bei Hover */
+    border-color: white; /* Weißer Rahmen bei Hover */
+    transform: scale(1.1); /* Skalierung des Links bei Hover */
+}
+
+
+    /* Container für den Button mit Hintergrund */
+.contact-button-container {
+    display: inline-block; /* Sorgt dafür, dass der Button blockweise bleibt */
+    background-color: black; /* Hintergrund hinter dem Button */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+/* Container fixiert am unteren Rand und nach rechts verschoben */
+.contact-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Button wird nach rechts verschoben */
+    left: 0;  /* Füllt den gesamten Bildschirm aus */
+    text-align: center; /* Zentriert den Button */
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Container für den Button */
+.contact-button-container {
+    display: inline-block;           /* Den Button im normalen Layout anzeigen */
+    background-color: black;         /* Hintergrund hinter dem Button */
+    border-radius: 5px;
+    margin-top: -25px;                 /* Abstand nach oben */
+    padding: 10px;
+    text-align: center;               /* Den Button im Container zentrieren */
+    position: relative;               /* Verhindert ein Hineinrutschen in den festen Bereich */
+}
+
+/* Kontakt-Button */
+.contact-button {
+    font-size: 0.8rem;                /* Button kleiner machen */
+    color: green;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid green;
+    padding: 8px 18px;                /* Etwas kleineres Padding für den Button */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Verschiebe den Button leicht nach links */
+.contact-button-container {
+    margin-left: calc(50% - 78px);    /* Verschiebt den Button um 100px nach links */
+}
+
+/* Hover-Effekt für den Kontakt-Button */
+.contact-button:hover {
+    background-color: rgba(0, 128, 0, 0.1);
+    color: white;
+    border-color: white;
+    transform: scale(1.1);
+}
+
+
+        /* Button für den Lebenslauf */
+        .resume-button {
+            font-size: 1rem;
+            color: green;
+            text-decoration: none;
+            background-color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Hover-Effekt für den Lebenslauf-Button */
+        .resume-button:hover {
+            background-color: rgba(0, 128, 0, 0.1); /* Helles Grün beim Hover */
+            color: white; /* Schriftfarbe wird weiß */
+            border-color: white; /* Rand wird weiß */
+            transform: scale(1.1);
+        }
+
+.footer {
+    position: relative;
+    bottom: -50px; /* Am unteren Rand fixiert */
+    left: 0;
+    width: 100%; /* Volle Breite */
+    text-align: center;
+    font-size: 0.8em;
+    color: #7f8c8d;
+    background-color: black; /* Optional: Hintergrundfarbe für den Footer */
+    padding: 10px 0; /* Optional: Padding für den Footer */
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Container für den Lebenslauf -->
+    <div class="container">
+        <!-- Der Lebenslauf-Titel, der den Download der PDF auslöst -->
+        <a href="C:\Users\Lejla\Desktop\GitHub\Info\CV2025.pdf" download>
+            <h1 class="resume-button">Lebenslauf</h1>
+        </a>
+
+        <p><strong>Lejla Habibovic</strong></p>
+        <p><strong>Geboren am:</strong> 07.09.1992 in Bosnien und Herzegowina</p>
+        <p><strong>Adresse:</strong> Schleißheimerstraße 125, 85221 Dachau</p>
+        <p><strong>Tel.:</strong> +49 1766 381 07 47</p>
+        <p><strong>E-Mail:</strong> lejla.habibovic@protonmail.com</p>
+
+        <div class="education">
+            <div class="section-title">Schulbildung</div>
+            <div class="section-content">
+                <ul>
+                    <li>1999 - 2003: Grundschule Dachau-Ost</li>
+                    <li>2003 - 2004: Mittelschule Dachau-Ost</li>
+                    <li>2004 - 2011: Dr. Josef Schwalber-Realschule Dachau</li>
+                    <li>2019 - 2022: Franz Auweck-Abendschule (Mittlere Reife, Durchschnitt: 2,3)</li>
+                </ul>
+                <p><strong>Sozialer Zweig:</strong> Biologie und Soziallehre anstelle von BWL und Sozialkunde</p>
+            </div>
+        </div>
+
+        <div class="career">
+            <div class="section-title">Berufliche Laufbahn</div>
+            <div class="section-content">
+                <div class="experience-item">
+                    <h4>Dezember 2012 – Oktober 2013: Night Auditor, Securitas GmbH</h3>
+                    <ul>
+                        <li>Rezeption, Gästeempfang, Check-In & Check-Out, Reservierungen, Buchhaltung, Tagesabschluss, Einarbeitung neuer Mitarbeiter, Erstellen von Leitfäden für den Arbeitsablauf</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Mai 2014 – Februar 2015: Objektschutz, SOD GmbH</h3>
+                    <ul>
+                        <li>Empfangsdienste, Streife, Baustellenbewachung</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Oktober 2015 – April 2016: Lagermitarbeiter, Amazon Logistics</h3>
+                    <ul>
+                        <li>Paketsortierung, Problembehandlung im Zustellprozess, Risk Management, Customer Support, Konfiguration von Geräten (Paketscanner, Laptops), Einarbeitung neuer Mitarbeiter und Fahrer, Erstellen von Arbeitsleitfäden, Sicherheitsschulungen, Meetings mit Disponenten und Schichtleitern, Zusammenarbeit mit IT-Team</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Jan. - Apr. 2017: Objektschutz, SIBA Security Service</h3>
+                    <ul>
+                        <li>Bewachung des Sozialbürgerhauses, mehrere Angriffe verhindert</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Apr. - Okt. 2017: Sicherheitsdienst, NWS GmbH im Auftrag der Deutschen Bahn</h3>
+                    <ul>
+                        <li>Bahnstreife, Depotbewachung, Protokollführung</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Jul. - Nov. 2018: Sicherheitsdienst, Securitas GmbH (Oktoberfest)</h3>
+                    <ul>
+                        <li>Bewachung des Geländes während Auf- und Abbau, Streife, Einlasskontrolle, Funkleitstelle (Notruf), Erste Hilfe, Lagerführung, Geräteausgabe und Wartung, Koordination technischer Ausstattung, Meetings mit Team- und Abschnittsleitern</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Dez. 2024 - aktuell: Mini-Job, Teamwork Instore Services</h3>
+                    <ul>
+                        <li>Warenverräumung</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="career">
+            <div class="section-title">Berufliche Auszeiten</div>
+            <div class="section-content">
+                <div class="experience-item">
+                    <h4>Apr. 2016 - Jan. 2017 (10 Monate)</h4>
+                    <ul>
+                        <li>Selbstständiges Lernen für die Sachkundeprüfung §34a und den Führerschein Klasse B: Rechtskunde, Umgang mit Waffen, Unfallverhütung, Selbstverteidigung, Theorie & Praxis Führerschein</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Nov. 2017 - Juni 2018 (8 Monate)</h4>
+                    <ul>
+                        <li>Bewerbungen für IT-Ausbildungen, Recherche zu kostenlosen Weiterbildungsmöglichkeiten, Probetage in verschiedenen Sicherheitsunternehmen</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h4>Aug. 2022 - Dez. 2024 (2 Jahre, 5 Monate)</h4>
+                    <ul>
+                        <li>Bewerbungen für IT-Ausbildungen & Quereinstiege, Probetage in IT-Jobs, Umschulungsantrag IT beim Jobcenter, erste Programmierprojekte, Hardware-Lernen durch Konsolendemontage, Laptopaufrüstung (RAM-Erweiterung, HDD zu SSD, Betriebssysteminstallation)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills">
+            <div class="section-title">Fähigkeiten</div>
+            <div class="section-content">
+                <h4>Sprachkenntnisse:</h4>
+                <ul>
+                    <li>Deutsch (Muttersprache)</li>
+                    <li>Englisch (B2)</li>
+                    <li>Französisch (A2, ehemals B2)</li>
+                    <li>Serbisch/Kroatisch/Bosnisch (Muttersprache)</li>
+                </ul>
+                <h4>Andere Kenntnisse:</h4>
+                <ul>
+                    <li>Betriebssysteme & IT-Administration: Installation & Konfiguration von Betriebssystemen (Windows und Linux), Emulatoren, Virtual Machines, PC- & Laptopaufrüstung</li>
+                    <li>Gaming & Hardware: Konsolenreparatur & -wartung, Retro-Games und verschiedene Spielesysteme installieren und nutzen</li>
+                    <li>Sicherheit: Sachkundeprüfung §34a, Sicherheitsgrundlagen und Deeskalationstechniken</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="hobbies">
+            <div class="section-title">Hobbys & Interessen</div>
+            <div class="section-content">
+                <ul>
+                    <h4>Kreative Arbeiten:</h4> <li>Animation, Zeichnen und 3D-Modelling (Digital), mit KI Bilder erstellen, NFTs, Fotografie & Bildbearbeitung, Schreiben (Fanfictions, Rezensionen)</li>
+                    <h4>Technik & IT:</h4> <li>IT-Sicherheit, Hardware & Gaming, Blockchain & Crypto, Game Development, Cyber-Security, KI-Entwicklung</li>
+                    <h4>Weiterbildung:</h4> <li>Versuch in eine IT-Umschulung zu gelangen (Systemintegration, Anwendungsentwicklung, Prozessanalyse)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- Zurück-Link ganz unten -->
+<div class="back-link">
+    <a href="index.html">← Zurück zur Startseite</a>
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2025 L.H.</p>
+</div>
+
+<!-- Kontakt-Button -->
+<div class="contact-button-container">
+    <a href="mailto:lejla.habibovic@protonmail.com" class="contact-button">Kontakt aufnehmen</a>
+</div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Alle Section-Titel abgreifen
+        const sectionTitles = document.querySelectorAll('.section-title');
+        
+        // Eine Variable für den aktuell geöffneten Abschnitt
+        let currentlyOpen = null;
+
+        // Event Listener für Hover hinzufügen
+        sectionTitles.forEach(title => {
+            title.addEventListener('mouseover', function() {
+                // Wenn ein anderer Abschnitt bereits geöffnet ist, schließen
+                if (currentlyOpen && currentlyOpen !== this) {
+                    currentlyOpen.nextElementSibling.style.display = 'none';
+                }
+
+                // Den aktuellen Abschnitt öffnen
+                const content = this.nextElementSibling;
+                content.style.display = 'block';
+
+                // Aktuellen Abschnitt als geöffnet markieren
+                currentlyOpen = this;
+            });
+        });
+    </script>
+</body>
+</html>
